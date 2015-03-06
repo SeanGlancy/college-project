@@ -103,7 +103,7 @@ C:\collegeProjectStuff\scanner\platforms\android\assets\www\plugins \
 C:\collegeProjectStuff\scanner\platforms\android\assets\www\css\index.css \
 C:\collegeProjectStuff\scanner\platforms\android\assets\www\img\logo.png \
 C:\collegeProjectStuff\scanner\platforms\android\assets\www\js\app.js \
-C:\collegeProjectStuff\scanner\platforms\android\assets\www\js\index.js \
+C:\collegeProjectStuff\scanner\platforms\android\assets\www\js\jquery-1.11.2.min.js \
 C:\collegeProjectStuff\scanner\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner \
 C:\collegeProjectStuff\scanner\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www \
 C:\collegeProjectStuff\scanner\platforms\android\assets\www\plugins\com.phonegap.plugins.barcodescanner\www\barcodescanner.js \

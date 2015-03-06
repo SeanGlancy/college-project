@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>lotto home page</title>
+		<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+		<link href='../static/css/bootstrap.min.css'rel='stylesheet' type="text/css" >
+		<link href='../static/JS/bootstrap.min.js' rel='stylesheet'>
+		<script src='../static/JS/functions.js'></script>
+		<script src='../static/JS/jquery-1.11.2.min'></script>
+	</head>
+	<body>
+		<div class='container'>
+		<ul class="nav nav-pills">
+			  <li role="presentation" class="active"><a href="#">Home</a></li>
+			  <li role="presentation"><a href="login()">login</a></li>
+			  <li role="presentation"><a href="#">welcome</a></li>
+		</ul>
+		<h1> You have been logged in</h1>
+		<h2>Functionality under construction</h2>
+		<br>
+			<p>Click <a href='/logout'>here</a> to logout.</p>
+			
+			{% for message in get_flashed_messages() %}
+				{{ message }}
+			{% endfor%}
+		</div>
+	</body>
+</html>
