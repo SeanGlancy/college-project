@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<title align='centre'>login page</title>
+		<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+		<link href='css/bootstrap.min.css'rel='stylesheet' media='screen'>
+		<script src='js/jquery-1.11.2.min.js'></script>
+	</head>
+	<body>
+	<ul class="nav nav-pills">
+			  <li role="presentation"><a href="index.html">Camera</a></li>
+			  <li role="presentation" ><a href="reg.html">Registration</a></li>
+			  <li role="presentation" class="active"><a href="#">login</a></li>
+			  
+			  
+		</ul>
+		<div >
+			<h1>Login page</h1>
+			<br>
+			
+				User-id:  <input type='text'  id='userid' ><br>
+				Password: <input type='password' id='passwd' ><br>			
+			<input type='button' onclick='check(userid,passwd)' value='Login'/>
+			<p id="return_s"></p>
+			<script>
+			function check(userid,passwd)
+			{
+				error=0
+				pass= passwd.value
+				id = userid.value
+				
+				if (id.length < 4 )
+				{
+					alert('userid must be greater than 4 chars')
+					error+=1
+				}
+				if (pass.length < 4 )
+				{
+					alert('pass must be greater than 4 chars')
+					error+=1
+				}
+				if (error == 0)
+				{
+					toServer()
+				}
+			}
+			function toServer()
+			{
+				//alert('server')
+				$.getJSON('http://c00156721.pythonanywhere.com/applogin',
+				{	
+						userid:$("#userid").val(),
+						passwd:$("#passwd").val()
+				},
+					function(data) 
+					{
+						alert('success');
+						$("#return_s").html(data.suc);
+						
+					}//data function end
+				);
+			
+			}//if end
+			</script>
+		</div>
+	</body>
+</html>

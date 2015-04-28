@@ -1,21 +1,30 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Lotto Project</title>
-		<meta name='viewport' content='width=device-width,initial-scale=1.0'>
-		<link href='static/css/bootstrap.min.css'rel='stylesheet' type="text/css" >
-		<script src='static/JS/functions.js'></script>
-		<script src='static/JS/jquery-1.11.2.min'></script>
-	</head>
-	<body>
-		<div class='container'>
-			<h1>Thank You for using this service</h1>
-			<br>
-			<p>click <a href='/home'>here</a> to go home.</p>
-			<button onclick="newPage()">load camera</button>
-			{% for message in get_flashed_messages() %}
-				{{ message }}
-			{% endfor%}
+{% extends "base.html" %}
 
-	</body>
-</html>
+{% block the_body %}
+
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+	<link href='../static/css/bootstrap.min.css'rel='stylesheet' type="text/css" >
+    <link href='../static/JS/bootstrap.min.js' rel='stylesheet'>
+	<link href='../static/css/background.css' rel='stylesheet' type="text/css" >
+    <ul class="nav nav-pills">
+      <li role="presentation"class="active" ><a href="#">Welcome</a></li>
+	  <li role="presentation" ><a href="/login">login</a></li>
+	  <li role="presentation"><a href="/register">Registration</a></li>
+    </ul>
+
+	<div class='container'>
+			<h1>This is the companion lotto website for the lotto App</h1>
+			<p>The lotto app is currently the only app on the market that enables you to scan a lottery ticket rather than checking the numbers by hand </p>
+			<br>
+		</div>
+
+
+{% endblock %}

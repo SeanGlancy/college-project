@@ -14,21 +14,15 @@
 	<link href='../static/css/bootstrap.min.css'rel='stylesheet' type="text/css" >
     <link href='../static/JS/bootstrap.min.js' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <ul class="nav nav-pills">
-      <li role="presentation" ><a href="/welcome">Welcome</a></li>
-	  <li role="presentation" class="active"><a href="#">login</a></li>
-	  <li role="presentation"><a href="/register">Registration</a></li>
-    </ul>
 
 <br><br>
-<form align='center' action='/processLogin' method='POST'>
-
-User-id: <input type='text' name='userid'><br>
+<form align='center' action='/adminLogin' method='POST'>
+Admin Login<br>
+admin-id: <input type='text' name='userid'><br>
 Password: <input type='password' name='passwd'><br>
 <input type='submit' value='login'>
 <br><br>
- <p> <a href='/resetPass'>Forgotten Password?</a> </p>
- <p> <a href='/register'>Create Account here</a> </p>
+
 </form>
 
 {% endblock %}

@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title>Reg</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+	<link href='css/bootstrap.min.css'rel='stylesheet' media='screen'>
+	<script src='js/jquery-1.11.2.min'></script>
+</head>
+<body>
+	<ul class="nav nav-pills">
+			  <li role="presentation"><a href="index.html">Camera</a></li>
+			  <li role="presentation" class="active"><a href="#">Registration</a></li>
+			  <li role="presentation"><a href="login.html">login</a></li>
+			  
+	</ul>
+			  
+		</ul>
+	<H1>Registration page</H1>
+	 
+	Please register:<br><br>
+	<form align='left' action='check()' method='POST'>		
+		
+		User-id: <input type='text' id='userid'><br>
+		Email address: <input type='email' id='email'><br>
+		Password: <input type='password' id='passwd'><br>
+		Password2: <input type='password' id='passwd2'><br>
+		
+	<input type='submit' value='Register'>			
+	 <p> <a href='index.html'>Page1</a> </p>
+	<script>
+	function check()
+	{
+				error=0
+				pass= passwd.value
+				pass2= passwd2.value
+				id = userid.value
+				mail=email.value
+				
+				if (id.length < 4 )
+				{
+					alert('userid must be greater than 4 chars')
+					error+=1
+				}
+				if (mail == undefined || mail == null ) )
+				{
+					alert('userid must be greater than 4 chars')
+					error+=1
+				}
+				if (pass.length < 4 )
+				{
+					alert('pass must be greater than 4 chars')
+					error+=1
+				}
+				if(pass != pass2)
+				{
+					alert('passwords do not match')
+					error+=1
+				}
+				if (error == 0)
+				{
+					toServer()
+				}
+	
+	}
+	
+	function toServer()
+			{
+				errorCount=0
+					
+			
+					$.getJSON('http://c00156721.pythonanywhere.com/',
+					{	
+							id:$("#userid").val()
+							email:$("#email").val()
+							passwd:$("#passwd").val()
+							
+					},
+						function(data) 
+						{
+							$("#return").text(data.suc);
+							
+						}//data function end
+					);
+			}	
+	</script>
+</body>
+</html>

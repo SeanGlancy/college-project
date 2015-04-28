@@ -7,23 +7,7 @@ function init() {
 }
 
 function startScan() {
-	console.log("inside function");
-	/* $.getJSON('/_add_numbers', {
-          a: $('input[name="a"]').val(),
-          b: $('input[name="b"]').val()
-        }, function(data) {
-          $("#result").text(data.result);
-        });*/
-	$.getJSON('http://c00156721.pythonanywhere.com/',
-				{
-						text:"dummy"
-				},
-					function(data) 
-					{
-						$("#result_s").text(data.suc);
-						
-					}
-				);
+
 	cordova.plugins.barcodeScanner.scan(
 		function (result) {
 			var s = "Result: " + result.text + "<br/>" +
@@ -41,15 +25,13 @@ function startScan() {
 					{
 						$("#result_s").text(data.suc);
 						
-					}
+					}//data function end
 				);
 			
-			}		 
-    
+			}//if end		 
 		},
 		function (error) {
 			alert("Scanning failed: " + error);
 		}
 	);
-
 }

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+<link href='../static/css/bootstrap.min.css'rel='stylesheet' type="text/css" >
+    <link href='../static/JS/bootstrap.min.js' rel='stylesheet'>
+    <ul class="nav nav-pills">
+      <li role="presentation" ><a href="/welcome">Welcome</a></li>
+	  <li role="presentation" ><a href="/login">login</a></li>
+	  <li role="presentation" class="active"><a href="#">Registration</a></li>
+    </ul>
+
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+
+<form align='center' action='/processReg' method='POST'>
+Please register:<br><br>
+UserName: <input type='text' name='userid'><br>
+Email address: <input type='email' name='email'><br>
+Password: <input type='password' name='passwd'><br>
+Password (again): <input type='password' name='passwd2'><br>
+<input type='submit' value='Register'>
+
+</form>
+<!--to print error -->
+
+{% endblock %}
